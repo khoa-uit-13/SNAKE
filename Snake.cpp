@@ -23,6 +23,15 @@ public:
             cout<<"X";
         }
     }
+    void VeKhung(){
+        for (int i= MINX ; i <= MAXX ; i++)
+            for (int j= MINX ; j <= MAXY ; j++)
+                if ((i == MINX) ||(i == MAXX) ||(j=MINY) || (j == MAXY)){
+                    gotoxy(i,j);
+                    printf("+");
+                }
+    }
+
     void DiChuyen(int Huong){
         for (int i = DoDai-1; i>0;i--)
             A[i] = A[i-1];
@@ -49,6 +58,7 @@ int main()
             if (t=='x') Huong = 1;
         }
         system("cls");
+        VeKhung();
         r.Ve();
         r.DiChuyen(Huong);
         Sleep(300);
